@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21513" systemVersion="22E252" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="AssistantChat" representedClassName="AssistantChat" syncable="YES" codeGenerationType="class">
+        <attribute name="messages" optional="YES" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromData" customClassName="[String]"/>
+        <relationship name="toFile" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MatexFile" inverseName="toChat" inverseEntity="MatexFile"/>
+    </entity>
+    <entity name="MatexFile" representedClassName="MatexFile" syncable="YES" codeGenerationType="class">
+        <attribute name="content" optional="YES" attributeType="String"/>
+        <attribute name="fileid" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="filename" optional="YES" attributeType="String"/>
+        <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="toChat" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AssistantChat" inverseName="toFile" inverseEntity="AssistantChat"/>
+        <relationship name="toConfig" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MatexFileConfig" inverseName="toFile" inverseEntity="MatexFileConfig"/>
+    </entity>
+    <entity name="MatexFileConfig" representedClassName="MatexFileConfig" syncable="YES" codeGenerationType="class">
+        <attribute name="author" optional="YES" attributeType="String"/>
+        <attribute name="colorLinks" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="creationDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="documentTitle" optional="YES" attributeType="String"/>
+        <attribute name="font" optional="YES" attributeType="String"/>
+        <attribute name="fontSize" optional="YES" attributeType="Float" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="generateTableOfContent" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="horizontalMargin" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="subtitle" optional="YES" attributeType="String"/>
+        <attribute name="verticalMargin" optional="YES" attributeType="Float" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="toFile" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MatexFile" inverseName="toConfig" inverseEntity="MatexFile"/>
+    </entity>
+</model>
