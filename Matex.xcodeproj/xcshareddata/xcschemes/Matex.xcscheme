@@ -72,13 +72,6 @@
             ReferencedContainer = "container:Matex.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
-      <EnvironmentVariables>
-         <EnvironmentVariable
-            key = "OPENAI_API_KEY"
-            value = "Bearer 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"
-            isEnabled = "YES">
-         </EnvironmentVariable>
-      </EnvironmentVariables>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
