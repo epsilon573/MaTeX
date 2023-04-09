@@ -25,7 +25,7 @@ struct AssistantView: View {
  
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
-        request.setValue("Bearer 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", forHTTPHeaderField: "Authorization")
+        request.setValue(ProcessInfo.processInfo.environment["OPENAI_API_KEY"], forHTTPHeaderField: "Authorization")
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         
         var chatMessages = [Message]()
