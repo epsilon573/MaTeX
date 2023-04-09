@@ -22,10 +22,13 @@ struct AssistantView: View {
     
     func fetchChatGPTResponse() async -> Void {
         let url = URL(string: "https://api.openai.com/v1/chat/completions")!
- 
+  
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
-        request.setValue(ProcessInfo.processInfo.environment["OPENAI_API_KEY"], forHTTPHeaderField: "Authorization")
+        guard let infoDictionary: [String: Any] = Bundle.main.infoDictionary else { return }
+        guard let mySecretApiKey: String = infoDictionary["OpenAIApiKey"] as? String else { return }
+
+        request.setValue(mySecretApiKey, forHTTPHeaderField: "Authorization")
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         
         var chatMessages = [Message]()
