@@ -108,27 +108,41 @@ struct AssistantView: View {
                 }
             }
             .overlay(alignment: .bottom){
-                HStack{
-                    TextField("Ask your query here...", text: $query)
-                    Button{
-                        
-                        Task{
-                            await fetchChatGPTResponse()
-                        }
-                    
-                        loadSpinner.toggle()
-                        messages.append(query)
-                        query = ""
+                VStack(alignment: .trailing) {
+                    Button {
+                        UIPasteboard.general.setValue(messages.last!, forPasteboardType: "public.plain-text")
                     } label: {
-                        Label("Send", systemImage: "paperplane.fill")
+                        Label("Copy", systemImage: "doc.on.doc")
+                            .padding(10)
                     }
+                    .background(Color(red: 242 / 255, green: 242 / 255, blue: 242 / 255))
+                    .clipShape(Rectangle())
+                    .cornerRadius(10)
+                    .padding(.horizontal, 15)
+                    .shadow(color: Color.black.opacity(0.2),radius: 5)
+                    
+                    HStack{
+                        TextField("Ask your query here...", text: $query)
+                        Button{
+                            
+                            Task{
+                                await fetchChatGPTResponse()
+                            }
+                            
+                            loadSpinner.toggle()
+                            messages.append(query)
+                            query = ""
+                        } label: {
+                            Label("Send", systemImage: "paperplane.fill")
+                        }
+                    }
+                    .padding(12)
+                    .background(Color(red: 242 / 255, green: 242 / 255, blue: 242 / 255))
+                    .clipShape(Rectangle())
+                    .cornerRadius(20)
+                    .padding(10)
+                    .shadow(color: Color.black.opacity(0.2),radius: 5)
                 }
-                .padding(12)
-                .background(Color(red: 242 / 255, green: 242 / 255, blue: 242 / 255))
-                .clipShape(Rectangle())
-                .cornerRadius(20)
-                .padding(10)
-                .shadow(color: Color.black.opacity(0.2),radius: 5)
             }
             
             if loadSpinner{

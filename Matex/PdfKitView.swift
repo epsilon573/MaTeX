@@ -8,36 +8,28 @@
 import SwiftUI
 import PDFKit
 
-
 struct PDFKitRepresentedView: UIViewRepresentable {
     let url: URL
 
-    init(_ url: URL) {
+    @Binding
+    var needRender: Bool
+    
+    init(pdfUrl url: URL,needRender renderBind: Binding<Bool>) {
         self.url = url
+        _needRender = renderBind
     }
 
-    func makeUIView(context: UIViewRepresentableContext<PDFKitRepresentedView>) -> PDFKitRepresentedView.UIViewType {
+    func makeUIView(context: UIViewRepresentableContext<PDFKitRepresentedView>) -> PDFView {
         // Create a `PDFView` and set its `PDFDocument`.
         let pdfView = PDFView()
+        
         pdfView.document = PDFDocument(url: self.url)
         return pdfView
     }
 
-    func updateUIView(_ uiView: UIView, context: UIViewRepresentableContext<PDFKitRepresentedView>) {
+    func updateUIView(_ pdfView: PDFView, context: UIViewRepresentableContext<PDFKitRepresentedView>) {
         // Update the view.
+        pdfView.document = PDFDocument(url: self.url)
     }
 }
 
-struct PdfKitView: View {
-    var pdfUrl: String
-    
-    var body: some View {
-        PDFKitRepresentedView(URL(string: pdfUrl)!)
-    }
-}
-
-struct PdfKitView_Previews: PreviewProvider {
-    static var previews: some View {
-        PdfKitView(pdfUrl: "https://www.africau.edu/images/default/sample.pdf")
-    }
-}
