@@ -22,7 +22,7 @@ struct ProjectView: View {
                 }
                 .tag(0)
             
-            PdfView()
+            PdfView(currMatexFile: matexFile)
                 .tabItem{
                     Label("PDF", systemImage: "doc.text.fill")
                 }

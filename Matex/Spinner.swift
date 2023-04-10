@@ -44,7 +44,7 @@ struct Spinner: View {
             // S1
             SpinnerCircle(start: spinnerStart, end: spinnerEndS1, rotation: rotationDegreeS1, color: darkBlue)
         }
-        .frame(width: 200, height: 200)
+        .frame(width: 75, height: 75)
         .onAppear() {
             self.animateSpinner()
             Timer.scheduledTimer(withTimeInterval: animationTime, repeats: true) { (mainTimer) in
@@ -92,7 +92,7 @@ struct SpinnerCircle: View {
     var body: some View {
         Circle()
             .trim(from: start, to: end)
-            .stroke(style: StrokeStyle(lineWidth: 20, lineCap: .round))
+            .stroke(style: StrokeStyle(lineWidth: 15, lineCap: .round))
             .fill(color)
             .rotationEffect(rotation)
     }
