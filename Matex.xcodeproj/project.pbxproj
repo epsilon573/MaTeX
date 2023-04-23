@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CF400C7E29F5910000D1534B /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF400C7D29F5910000D1534B /* LottieView.swift */; };
+		CF400C8129F5914200D1534B /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = CF400C8029F5914200D1534B /* Lottie */; };
+		CF400C8329F592FF00D1534B /* toucan.json in Resources */ = {isa = PBXBuildFile; fileRef = CF400C8229F592FF00D1534B /* toucan.json */; };
 		CF53D31729E04CAF00945D3C /* ChatBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF53D31629E04CAF00945D3C /* ChatBubble.swift */; };
 		CF53D31929E04CE700945D3C /* ChatGptQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF53D31829E04CE700945D3C /* ChatGptQuery.swift */; };
 		CF53D31B29E05E0000945D3C /* ChatGptResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF53D31A29E05E0000945D3C /* ChatGptResponse.swift */; };
@@ -48,6 +51,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CF400C7D29F5910000D1534B /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
+		CF400C8229F592FF00D1534B /* toucan.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = toucan.json; sourceTree = "<group>"; };
 		CF53D31629E04CAF00945D3C /* ChatBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBubble.swift; sourceTree = "<group>"; };
 		CF53D31829E04CE700945D3C /* ChatGptQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatGptQuery.swift; sourceTree = "<group>"; };
 		CF53D31A29E05E0000945D3C /* ChatGptResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatGptResponse.swift; sourceTree = "<group>"; };
@@ -81,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF400C8129F5914200D1534B /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -124,6 +130,7 @@
 		CFFF365B29DC7761006D8911 /* Matex */ = {
 			isa = PBXGroup;
 			children = (
+				CF400C8229F592FF00D1534B /* toucan.json */,
 				CFFF365C29DC7761006D8911 /* MatexApp.swift */,
 				CFEC194729E2C64D00EED011 /* MatexConfig.xcconfig */,
 				CFEC194A29E2CFA700EED011 /* Info.plist */,
@@ -132,6 +139,7 @@
 				CFFF368829DC78EC006D8911 /* EditorView.swift */,
 				CFFF369029DC81ED006D8911 /* PdfKitView.swift */,
 				CFFF368A29DC7A5A006D8911 /* PdfView.swift */,
+				CF400C7D29F5910000D1534B /* LottieView.swift */,
 				CFEC194D29E2F5CC00EED011 /* PdfData.swift */,
 				CFEC194B29E2F30A00EED011 /* FileDownloader.swift */,
 				CFFF368C29DC7ADA006D8911 /* ConfigView.swift */,
@@ -190,6 +198,7 @@
 			);
 			name = Matex;
 			packageProductDependencies = (
+				CF400C8029F5914200D1534B /* Lottie */,
 			);
 			productName = Matex;
 			productReference = CFFF365929DC7761006D8911 /* Matex.app */;
@@ -264,6 +273,7 @@
 			);
 			mainGroup = CFFF365029DC7761006D8911;
 			packageReferences = (
+				CF400C7F29F5914200D1534B /* XCRemoteSwiftPackageReference "lottie-spm" */,
 			);
 			productRefGroup = CFFF365A29DC7761006D8911 /* Products */;
 			projectDirPath = "";
@@ -282,6 +292,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CFFF366429DC7762006D8911 /* Preview Assets.xcassets in Resources */,
+				CF400C8329F592FF00D1534B /* toucan.json in Resources */,
 				CFFF366129DC7762006D8911 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -308,6 +319,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CFFF369129DC81ED006D8911 /* PdfKitView.swift in Sources */,
+				CF400C7E29F5910000D1534B /* LottieView.swift in Sources */,
 				CF53D31B29E05E0000945D3C /* ChatGptResponse.swift in Sources */,
 				CFFF368D29DC7ADA006D8911 /* ConfigView.swift in Sources */,
 				CF53D32029E0644200945D3C /* Spinner.swift in Sources */,
@@ -645,6 +657,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CF400C7F29F5914200D1534B /* XCRemoteSwiftPackageReference "lottie-spm" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-spm.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CF400C8029F5914200D1534B /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CF400C7F29F5914200D1534B /* XCRemoteSwiftPackageReference "lottie-spm" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		CFFF369A29DD7B9D006D8911 /* MatexDataModel.xcdatamodeld */ = {

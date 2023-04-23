@@ -21,7 +21,7 @@ struct PdfView: View {
     
     init(currMatexFile: MatexFile) {
         matexFile = currMatexFile
-        ngrokUrl = "http://13.233.212.57:5000"
+        ngrokUrl = "http://13.233.212.57"
         pdfUrl = URL(string: "\(ngrokUrl)/servePdf/\(matexFile!.fileid!.uuidString).pdf")!
     }
     
