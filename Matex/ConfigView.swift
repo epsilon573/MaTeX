@@ -136,6 +136,10 @@ struct ConfigView: View {
                     Toggle("Generate Table of Content", isOn: $generateTableOfContents)
                     Toggle("Color Links", isOn: $colorLinks)
                 }
+                
+                Section(header: Text("")) {
+                    EmptyView()
+                }
             }
             
             Button {
